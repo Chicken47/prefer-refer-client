@@ -1,9 +1,15 @@
 "use client";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 const Header = () => {
+  const router = usePathname();
   return (
-    <div className="flex items-center justify-between w-full px-5 py-5 bg-green-300 shadow-xl shadow-green-200">
+    <div
+      className={`z-0 ${
+        router === "/login" || router === "/signup" ? "hidden" : "flex"
+      } items-center justify-between w-full px-5 py-5 bg-green-300 shadow-xl shadow-green-200`}
+    >
       <div className="font-extrabold text-[22px] cursor-pointer">
         PreferRefer
       </div>
