@@ -15,6 +15,10 @@ const Login = () => {
     axios
       .post(url, payload)
       .then((response) => {
+        /*
+          If you would like your client app to be able to access other headers, you need to set the Access-Control-Expose-Headers header on the server:
+            Access-Control-Expose-Headers: Access-Token, Uid
+        */
         // get the authToken and store it in session storage for now, cookies later
       })
       .catch((error) => {
